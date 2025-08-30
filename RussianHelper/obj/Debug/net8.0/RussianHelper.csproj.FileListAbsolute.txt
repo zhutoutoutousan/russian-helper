@@ -1,0 +1,5 @@
+D:\russian-helper\RussianHelper\obj\Debug\net8.0\RussianHelper.csproj.AssemblyReference.cache
+D:\russian-helper\RussianHelper\obj\Debug\net8.0\RussianHelper.GeneratedMSBuildEditorConfig.editorconfig
+D:\russian-helper\RussianHelper\obj\Debug\net8.0\RussianHelper.AssemblyInfoInputs.cache
+D:\russian-helper\RussianHelper\obj\Debug\net8.0\RussianHelper.AssemblyInfo.cs
+D:\russian-helper\RussianHelper\obj\Debug\net8.0\RussianHelper.csproj.CoreCompileInputs.cache

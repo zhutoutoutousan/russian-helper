@@ -1,0 +1,110 @@
+<Window x:Class="RussianHelper.GlobalPopupWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Russian Translation" 
+        Height="200" Width="350"
+        WindowStyle="None"
+        AllowsTransparency="True"
+        Background="Transparent"
+        Topmost="True"
+        ShowInTaskbar="False"
+        ResizeMode="NoResize">
+    
+    <Border Background="White" 
+            BorderBrush="#E0E0E0" 
+            BorderThickness="1" 
+            CornerRadius="8" 
+            Padding="15"
+            Effect="{StaticResource DropShadow}">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <!-- Header with close button -->
+            <Grid Grid.Row="0" Margin="0,0,0,10">
+                <TextBlock x:Name="PopupWord" 
+                           Text="привет" 
+                           FontSize="18" 
+                           FontWeight="Bold" 
+                           Foreground="#212121"/>
+                <Button x:Name="CloseButton" 
+                        Content="✕" 
+                        HorizontalAlignment="Right" 
+                        VerticalAlignment="Top"
+                        Width="20" 
+                        Height="20" 
+                        Background="Transparent" 
+                        BorderThickness="0"
+                        Foreground="#757575"
+                        Click="CloseButton_Click"/>
+            </Grid>
+            
+            <!-- Pronunciation -->
+            <TextBlock Grid.Row="1" 
+                       x:Name="PopupPronunciation" 
+                       Text="[pree-vyet]" 
+                       FontSize="14" 
+                       Foreground="#2196F3" 
+                       Margin="0,0,0,8"/>
+            
+            <!-- Loading Indicator -->
+            <StackPanel Grid.Row="2" 
+                        x:Name="LoadingPanel" 
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Center" 
+                        VerticalAlignment="Center"
+                        Margin="0,8" 
+                        Visibility="Collapsed">
+                <TextBlock Text="🔄" 
+                           FontSize="16" 
+                           VerticalAlignment="Center" 
+                           Margin="0,0,8,0"/>
+                <TextBlock Text="Loading translation..." 
+                           FontSize="12" 
+                           Foreground="#757575" 
+                           VerticalAlignment="Center"/>
+            </StackPanel>
+            
+            <!-- Translation Content -->
+            <StackPanel Grid.Row="2" x:Name="ContentPanel">
+                <TextBlock x:Name="PopupTranslation" 
+                           Text="Hello" 
+                           FontSize="16" 
+                           Foreground="#212121" 
+                           Margin="0,0,0,8"
+                           TextWrapping="Wrap"/>
+                <TextBlock x:Name="PopupExamples" 
+                           Text="Привет, как дела? - Hello, how are you?" 
+                           FontSize="12" 
+                           Foreground="#757575" 
+                           TextWrapping="Wrap"/>
+            </StackPanel>
+            
+            <!-- Error Message -->
+            <TextBlock Grid.Row="2" 
+                       x:Name="PopupError" 
+                       Text="" 
+                       FontSize="12" 
+                       Foreground="Red" 
+                       TextWrapping="Wrap" 
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"
+                       Visibility="Collapsed"/>
+            
+            <!-- Footer -->
+            <StackPanel Grid.Row="3" 
+                        Orientation="Horizontal" 
+                        HorizontalAlignment="Right" 
+                        Margin="0,10,0,0">
+                <TextBlock Text="Powered by DeepSeek" 
+                           FontSize="10" 
+                           Foreground="#757575" 
+                           VerticalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+    </Border>
+</Window>
